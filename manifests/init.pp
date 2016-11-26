@@ -8,7 +8,6 @@
 # $version::                       subscription-manager package version, it's passed to ensure parameter of package resource
 #                                  can be set to specific version number, 'latest', 'present' etc.
 #
-#
 # $install_firstboot::             boolean; controls whether firstboot is installed or not. Defaults to false
 #                                  type:boolean
 #
@@ -30,19 +29,15 @@
 # $report_package_profile::        If set to zero, the client will not report the package profile to
 #                                  the subscription management service.
 #
+# $prefix::                        Server prefix
+#
+# $ca_cert_dir::                   Server CA certificate location
+#
+# $repo_ca_cert::                  Default CA cert to use when generating yum repo configs
+#
 # === Examples
 #
-#  class { subscription_manager:
-#
-#  }
-#
-# === Authors
-#
-# Gaël Chamoulaud <gchamoul@redhat.com>
-#
-# === Copyright
-#
-# Copyright 2013 Gaël Chamoulaud <gchamoul@redhat.com>
+#  include ::subscription_manager
 #
 class subscription_manager (
   $version                = $subscription_manager::params::version,
